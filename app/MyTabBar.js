@@ -3,14 +3,17 @@ import {
 	TabBarIOS,
 	NavigatorIOS,
 } from 'react-native';
-import HomePage from './HomePage';
-import FavaritePage from './FavaritePage';
 
+import HomeClodePage  from './HomeClodePage';
+import HomePartyPage  from './HomePartyPage';
+import HomeComcatPage from './HomeComcatPage';
+import HomeMePage     from './HomeMePage';
+ 
 export default class MyTabBar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedBarItem: 'home'
+			selectedItemIndex: 0,
 		};
 	}
 	render() {
@@ -23,36 +26,72 @@ export default class MyTabBar extends Component {
 			>
 				<TabBarIOS.Item
 					systemIcon = 'more'
-					selected = {this.state.selectedBarItem === 'home'}
-					onPress = {()=>{this.setState({selectedBarItem: 'home'})}}
+					selected = {this.state.selectedItemIndex === 0}
+					onPress = {()=>{this.setState({selectedItemIndex: 0})}}
 				>
 					<NavigatorIOS
 						style={{flex: 1}}
 						initialRoute={{
-							component: HomePage,
-							title: '首页'
+							component: HomeClodePage,
+							title: '云办公',
 						}}
 						renderScene={(route, navigator)=>{
-							let HomePageomePagee = route.component;
-							return <HomePage navigator={navigator}></HomePage>
+							let HomeClodePage = route.component;
+							return <HomeClodePage></HomeClodePage>
 						}}
 					/>
 				</TabBarIOS.Item>
 
 				<TabBarIOS.Item
-					systemIcon = 'favorites'
-					selected = {this.state.selectedBarItem==='favor'}
-					onPress = {()=>{this.setState({selectedBarItem: 'favor'})}}
+					systemIcon = 'more'
+					selected = {this.state.selectedItemIndex === 1}
+					onPress = {()=>{this.setState({selectedItemIndex: 1})}}
 				>
 					<NavigatorIOS 
 						style={{flex: 1}}
 						initialRoute={{
-							component: FavaritePage,
-							title: '收藏',
+							component: HomePartyPage,
+							title: '党建',
 						}}
 						renderScene={(route, navigator)=>{
-							let FavaritePage = route.component;
-							return <FavaritePage></FavaritePage>
+							let HomePartyPage = route.component;
+							return <HomePartyPage></HomePartyPage>
+						}}
+					/>
+				</TabBarIOS.Item>
+					
+				<TabBarIOS.Item
+					systemIcon = 'more'
+					selected = {this.state.selectedItemIndex === 2}
+					onPress = {()=>{this.setState({selectedItemIndex: 2})}}
+				>
+					<NavigatorIOS
+						style={{flex: 1}}
+						initialRoute = {{
+							component: HomeComcatPage,
+							title: '通讯录',
+						}}
+						renderScene = {(route, navigator)=>{
+							let HomeComcatPage = route.component;
+							return <HomeComcatPage></HomeComcatPage>
+						}}
+					/>
+				</TabBarIOS.Item>
+
+				<TabBarIOS.Item
+					systemIcon = 'more'
+					selected = {this.state.selectedItemIndex === 3}
+					onPress = {()=>{this.setState({selectedItemIndex: 3})}}
+				>
+					<NavigatorIOS
+						style = {{flex: 1}}
+						initialRoute = {{
+							component: HomeMePage,
+							title: '我的',
+						}}
+						renderScene = {(route, navigator)=>{
+							let HomeMePage = route.component;
+							return <HomeMePage></HomeMePage>
 						}}
 					/>
 				</TabBarIOS.Item>
