@@ -14,8 +14,12 @@ export default class HomeComcatPage extends Component {
 	render() {
 		return(
 			<View style={{flex: 1, backgroundColor: 'purple'}}>
-				<Text>2</Text>
+
 			</View>
 		);
 	}
+}
+
+class InputViewComponent extends Component {
+	
 }

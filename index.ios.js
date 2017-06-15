@@ -10,6 +10,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import MyTabBar from './app/MyTabBar';
+import LoginPage from './app/LoginPage';
 
 export default class AwesomeProject extends Component {
   render() {

@@ -10,11 +10,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import LoginPage from './LoginPage';
+
 export default class HomeClodePage extends Component {
 	render() {
 		return(
 			<View style={{flex: 1, backgroundColor: 'orange'}}>
-				<Text>1</Text>
+
 			</View>
 		);
 	}
